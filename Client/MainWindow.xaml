@@ -1,0 +1,14 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Client.MainWindow" 
+        Title="Visualizador" Height="754.5" Width="1320" IsManipulationEnabled="True" WindowStyle="ThreeDBorderWindow" MinWidth="954" MinHeight="708" Closing="Window_Closing">
+    <Window.Resources>
+        <ResourceDictionary >
+            <ImageSource x:Key="GREENPNG">Resources/verde.png</ImageSource>
+            <ImageSource x:Key="REDPNG">Resources/rojo.png</ImageSource>
+        </ResourceDictionary >
+    </Window.Resources>
+
+    
+</Window>
