@@ -13,6 +13,30 @@ namespace Server
     public class RequestWorker : Worker
     {
         private Socket _socket;
+        private BinaryCodec<LidarMessage> _messageCodec;
+
+        public RequestWorker(Socket ServiceSocket)
+        {
+            _socket = ServiceSocket;
+            _messageCodec = new BinaryCodec<LidarMessage>();
+        }
+        protected override void doWork()
+        {
+            try
+            {
+                while (!_endSignal)
+                {
+                    double[] mapToSend=null;
+                    lock (SharedData.Maplock) 
+                    {
+                        if (SharedData.CurrentMap != null)
+                        {
+                            mapToSend = (double[])
+                        }
+                    }
+                }
+            }
+        }
 
     }
 
