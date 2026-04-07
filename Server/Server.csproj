@@ -48,7 +48,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestWorker.cs" />
-    <Compile Include="SharedData.cs" />
     <Compile Include="SimulationWorker.cs" />
     <Compile Include="Worker.cs" />
   </ItemGroup>
