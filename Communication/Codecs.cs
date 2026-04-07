@@ -64,6 +64,6 @@ namespace Communication
     public class LidarMessage
     {
         public string command {  get; set; }//Manejo de comando START STOP
-        public double MapData { get; set; }// Datos del mapa
+        public double MapData { get; set; }// Datos del mapa 
     }
 }
