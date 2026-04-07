@@ -12,6 +12,7 @@ namespace Server
     /// </summary>
     public class RequestWorker : Worker
     {
+        private Socket _socket;
 
     }
 
