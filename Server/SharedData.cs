@@ -9,7 +9,7 @@ namespace Server {
     public static class SharedData
     {
         public static double[] CurrentMap = null;
-        public static bool Running = false;
+        public static bool Running = false; //si
         public static readonly object Maplock = new object();
     }
 }
