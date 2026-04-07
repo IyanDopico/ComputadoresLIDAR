@@ -4,6 +4,7 @@ using System.Collections.Concurrent;
 using System.Net.Sockets;
 using System.IO;
 using Communication;
+using System.Threading;
 
 namespace Server
 {
@@ -26,15 +27,40 @@ namespace Server
             {
                 while (!_endSignal)
                 {
-                    double[] mapToSend=null;
-                    lock (SharedData.Maplock) 
+                    double[] mapToSend = null;
+                    lock (SharedData.Maplock)
                     {
                         if (SharedData.CurrentMap != null)
                         {
-                            mapToSend = (double[])
+                            mapToSend = (double[])SharedData.CurrentMap.Clone();
                         }
                     }
+                    if (mapToSend != null) 
+                    {
+                        LidarMessage message = new LidarMessage
+                        {
+                            Command = LidarCommand.None,
+                            MapData = mapToSend
+                        };
+                        SendMessage(message);
+                    }
+                    Thread.Sleep(1000);
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }finally {
+                try
+                {
+                    _socket.Close();
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Fallo cierre");
+
+                }
+                
             }
         }
 
