@@ -67,7 +67,7 @@ namespace Communication
     [Serializable] // OBLIGATORIO para BinaryFormatter
     public class LidarMessage
     {
-        public LidarCommand Command { get; set; } = LidarCommand.None;
+        public LidarCommand Command { get; set; } 
         // Campo de control:
         // - Start → arrancar simulación
         // - Stop → detener
